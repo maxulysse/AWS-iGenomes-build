@@ -1,0 +1,15 @@
+# You can use this file to create a conda environment for this pipeline:
+# conda env create -f environment.yml
+name: AWS-iGenomes-build-alpha
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - bismark=0.20.0
+  - bowtie=1.2.2
+  - bowtie2=2.3.4.3
+  - bwa=0.7.17
+  - multiqc=1.7
+  - star=2.6.1b
