@@ -8,4 +8,4 @@ LABEL \
 COPY environment.yml /
 RUN conda update -n base -c defaults conda  \
   && conda env create -f /environment.yml && conda clean -a
-ENV PATH /opt/conda/envs/aws-igenomes-build-alpha/bin:$PATH
+ENV PATH /opt/conda/envs/awsigenomesbuild-0.5/bin:$PATH
