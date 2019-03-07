@@ -1,0 +1,27 @@
+sudo: required
+language: java
+jdk: openjdk8
+services: docker
+
+addons:
+  apt:
+    update: true
+
+env:
+  global:
+    - NXF_VER=18.10.1
+  matrix:
+    - TEST=ANNOTATESNPEFF
+
+before_install:
+# Donwload containers
+  - docker pull maxulysse/awsigenomesbuild:latest
+
+install:
+  # Install Nextflow
+  - curl -fsSL get.nextflow.io | bash
+  - chmod +x nextflow
+  - sudo mv nextflow /usr/local/bin/
+
+# Actual tests
+script: nextflow run .
